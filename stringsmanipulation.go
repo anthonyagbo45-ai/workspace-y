@@ -1,47 +1,71 @@
-// // Here, we will write a function that checks whether any rune in a word is a vowel.
-// // we will be using the strings.ContainsFunc
-// // The strings.ContainsFunc checks if a character(a rune) in string satisfies a given condition
+// // // Here, we will write a function that checks whether any rune in a word is a vowel.
+// // // we will be using the strings.ContainsFunc
+// // // The strings.ContainsFunc checks if a character(a rune) in string satisfies a given condition
+
+// // package main
+
+// // import (
+// // 	"fmt"
+// // 	"strings"
+// // )
+
+// // func check4vowel(word string) bool {
+// // 	f := func(r rune) bool {
+// // 		return r == 'a' || r == 'e' || r == 'i' || r == 'o' || r == 'u'
+// // 	}
+// // 	return strings.ContainsFunc(word, f)
+// // }
+
+// // func main() {
+// // 	fmt.Println(check4vowel("hello"))
+// // 	fmt.Println(check4vowel("HELLO")) // it returned false because it is case sensitive.
+// // 	fmt.Println(check4vowel("Hello"))
+// // 	fmt.Println(check4vowel("success"))
+// // }
+
+// // Here we will write a function that checks if there is Punctuation in a word
 
 // package main
 
-// import (
+// import(
 // 	"fmt"
 // 	"strings"
 // )
 
-// func check4vowel(word string) bool {
-// 	f := func(r rune) bool {
-// 		return r == 'a' || r == 'e' || r == 'i' || r == 'o' || r == 'u'
+// func CheckPunct(words string) bool  {
+// 	f := func (r rune) bool {
+// 		return r =='!' || r == '?' || r == '.'
 // 	}
-// 	return strings.ContainsFunc(word, f)
+// 	return strings.ContainsFunc(words, f)
 // }
 
-// func main() {
-// 	fmt.Println(check4vowel("hello"))
-// 	fmt.Println(check4vowel("HELLO")) // it returned false because it is case sensitive.
-// 	fmt.Println(check4vowel("Hello"))
-// 	fmt.Println(check4vowel("success"))
+// func main()  {
+// 	fmt.Println(CheckPunct("hello!"))
+// 	fmt.Println(CheckPunct("How are you?"))
+// 	fmt.Println(CheckPunct("my name"))
 // }
 
-
-// Here we will write a function that checks if there is Punctuation in a word
+// Here we will check if a the first character in a word is a vowel.
+// If it is a vowel, it will  return "an" but if it is not, it will return "a"
+// we will be using the strings.ContainsRune
 
 package main
 
-import(
+import (
 	"fmt"
 	"strings"
 )
 
-func CheckPunct(words string) bool  {
-	f := func (r rune) bool {
-		return r =='!' || r == '?' || r == '.' 
+func Is1stVowel(word string) string {
+	vowels := "aeiouh"
+	if strings.ContainsRune(vowels, rune(word[0])) {
+		return "a"
 	}
-	return strings.ContainsFunc(words, f)
+	return "an"
 }
 
-func main()  {
-	fmt.Println(CheckPunct("hello!"))
-	fmt.Println(CheckPunct("How are you?"))
-	fmt.Println(CheckPunct("my name"))
+func main() {
+	fmt.Println(Is1stVowel("actor"))
+	fmt.Println(Is1stVowel("book"))
+	fmt.Println(Is1stVowel("apple"))
 }
