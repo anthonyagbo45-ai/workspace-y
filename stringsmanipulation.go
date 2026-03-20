@@ -375,30 +375,48 @@
 
 // import("fmt"; "strings")
 
-// func CheckWord(word string) bool {
-// 	text := strings.Contains(word, "admin")
-// 	return text
+// // func CheckWord(word string) bool {
+// // 	text := strings.Contains(word, "admin")
+// // 	return text
+// // }
+
+// // func main()  {
+// // 	fmt.Println(CheckWord("admin-user"))
+// // }
+
+
+// // Using containsAny we will check if a word contains any vowel
+
+// package main
+
+// import("fmt"; "strings")
+
+// func IsVowel(word string) bool {
+
+//     if strings.ContainsAny(word, "aeiou") {
+// 		return true
+// 	}
+// 	return false
 // }
 
 // func main()  {
-// 	fmt.Println(CheckWord("admin-user"))
+// 	fmt.Println(IsVowel("sky"))
 // }
 
+// using strings.ContainsRune to check if a character(rune) is contained in a word
 
-// Using containsAny we will check if a word contains any vowel
 
 package main
 
 import("fmt"; "strings")
 
-func IsVowel(word string) bool {
-
-    if strings.ContainsAny(word, "aeiou") {
+func checkRune(word string) bool  {
+	if strings.ContainsRune(word, 'h') {
 		return true
 	}
 	return false
 }
 
 func main()  {
-	fmt.Println(IsVowel("james"))
+	 fmt.Println(checkRune("hello"))
 }
